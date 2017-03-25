@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset = "utf-8">
+	<script src="https://use.fontawesome.com/fbe460cb70.js"></script>
+	<link rel = 'stylesheet' href = 'css/style.css'>
+	<link rel = 'stylesheet' href = 'css/friends.css'>
+	<link rel = 'stylesheet' href = 'css/settings.css'>
+
+	<title>Productive Peach</title>
+</head>
+
+<body>
+<!-- heading -->
+	<div class = "header">
+        <img src = "images/ProductivePeach.png" id = "logo">
+        <h2 id = "instruction_prompt">Click the plus sign to plant something!</h2> 
+	</div>
+	<div id = "garden">
+<!-- settings -->
+		<div id = "settings_btn" class="fa fa-plus" aria-hidden="true"></div>
+		<div id = "settings">
+			<div id = "settings_content">
+				<span class="close">&times;</span>
+				<div id ="settings_header">Add a Plant</div>
+				<div id="addtree">
+					<button id="fb" onclick="addFB()">Facebook</button>
+					<button id="instagram" onclick="addIG()">Instagram</button>
+					<button id="twitter" onclick="addTW()">Twitter</button>
+					<button id="youtube" onclick="addYT()">Youtube</button>
+					<button id="linkedin" onclick="addLI()">LinkedIn</button>
+				</div>
+			<div id ="settings_header">Remove a Plant</div>
+			<div id="removetree">
+				<button id="fb" onclick="removeFB()">Facebook</button>
+				<button id="instagram" onclick="removeIG()">Instagram</button>
+				<button id="twitter" onclick="removeTW()">Twitter</button>
+				<button id="youtube" onclick="removeYT()">Youtube</button>
+				<button id="linkedin" onclick="removeLI()">LinkedIn</button>
+			</div>
+		</div>
+<!-- add friends -->
+		<div id = "friends_btn" class="fa fa-users" aria-hidden="true"></div>
+		<div id="friends">
+			<div id = "friends_content">
+			<span class="close2">&times;</span>
+				<div id ="friends_header">Connect with your friends</div>
+				<form id="findfriendsnumber">By Phone Number:<br>
+  				<input id="numberbox" type="text" name="phonenumber" size="35" height="5"><br>
+				<button id="friends_submit" onclick="Submit()">Add</button>
+  				</form>
+			</div>
+		</div>
+<!-- test tree stuff -->
+	<div id = "plants">
+<!-- 		Facebook tree -->
+		<img src="images/tree.png" id="fb_tree"> 
+		<div id = "fb_time_left"></div>
+		<div id = "fb_tree_timer">
+			<div id = "fb_hours">
+				<label for="fb_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="FBhourValue(this.value)" onchange="FBhourValue(this.value)"/>
+				<span id="fb_h">0</span>
+			</div>
+			<div id = "fb_mins">
+				<label for="fb_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="FBminuteValue(this.value)" onchange="FBminuteValue(this.value)" align=bottom/>
+				<span id="fb_m">0</span>
+			</div>
+			<button id="fb_submit" class = "submit" onclick="FBsubmitTime()">Submit</button>
+		</div>
+<!-- 		Instagram bush -->
+		<img src = "images/insta_bush.png" id = "insta_bush"> 
+		<div id = "ig_time_left"></div>
+		<div id = "ig_bush_timer">
+			<div id = "ig_hours">
+				<label for="ig_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="IGhourValue(this.value)" onchange="IGhourValue(this.value)"/>
+				<span id="ig_h">0</span>
+			</div>
+			<div id = "ig_mins">
+				<label for="ig_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="IGminuteValue(this.value)" onchange="IGminuteValue(this.value)" align=bottom/>
+				<span id="ig_m">0</span>
+			</div>
+			<button id="ig_submit" class = "submit" onclick="IGsubmitTime()">Submit</button>
+		</div>
+<!-- 		Twitter tree -->
+		<img src="images/twitter_tree.png" id="tw_tree">
+		<div id = "tw_time_left"></div>
+		<div id = "tw_tree_timer">
+			<div id = "tw_hours">
+				<label for="tw_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="TWhourValue(this.value)" onchange="TWhourValue(this.value)"/>
+				<span id="tw_h">0</span>
+			</div>
+			<div id = "tw_mins">
+				<label for="tw_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="TWminuteValue(this.value)" onchange="TWminuteValue(this.value)" align=bottom/>
+				<span id="tw_m">0</span>
+			</div>
+			<button id="tw_submit" class = "submit" onclick="TWsubmitTime()">Submit</button>
+		</div>
+	</div>  
+<!-- 		Youtube plant -->
+		<img src="images/youtube_flower.png" id="yt_plant"> 
+		<div id = "yt_time_left"></div>
+		<div id = "yt_plant_timer">
+			<div id = "yt_hours">
+				<label for="yt_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="YThourValue(this.value)" onchange="YThourValue(this.value)"/>
+				<span id="yt_h">0</span>
+			</div>
+			<div id = "yt_mins">
+				<label for="yt_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="YTminuteValue(this.value)" onchange="YTminuteValue(this.value)" align=bottom/>
+				<span id="yt_m">0</span>
+			</div>
+			<button id="yt_submit" class = "submit" onclick="YTsubmitTime()">Submit</button>
+		</div>  
+<!-- 		Linkedin plant -->
+		<img src="images/linkedin_plant.png" id="li_plant">
+		<div id = "li_time_left"></div>
+		<div id = "li_plant_timer">
+			<div id = "li_hours">
+				<label for="li_hours">Hours</label>
+				<input type="range" min="0" max="12" value="0" step="1" oninput="LIhourValue(this.value)" onchange="LIhourValue(this.value)"/>
+				<span id="li_h">0</span>
+			</div>
+			<div id = "li_mins">
+				<label for="li_mins">Minutes</label>
+				<input type="range" min="0" max="59" value="0" step="1" oninput="LIminuteValue(this.value)" onchange="LIminuteValue(this.value)" align=bottom/>
+				<span id="li_m">0</span>
+			</div>
+			<button id="li_submit" class = "submit" onclick="LIsubmitTime()">Submit</button>
+		</div>
+	</div>   
+
+	<script src="js/productivepeach.js"></script>
+</body>
+</html>
